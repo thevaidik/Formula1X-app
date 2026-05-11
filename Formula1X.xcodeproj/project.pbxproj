@@ -6,14 +6,66 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		A1CC1D4F2FB1CC97009CAF3B /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1CC1D4E2FB1CC97009CAF3B /* WidgetKit.framework */; };
+		A1CC1D512FB1CC97009CAF3B /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1CC1D502FB1CC97009CAF3B /* SwiftUI.framework */; };
+		A1CC1D5E2FB1CC99009CAF3B /* Formula1XWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = A1CC1D4C2FB1CC97009CAF3B /* Formula1XWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		A1CC1D5C2FB1CC99009CAF3B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A1CC1D1C2FB1242A009CAF3B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A1CC1D4B2FB1CC97009CAF3B;
+			remoteInfo = Formula1XWidgetExtension;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		A1CC1D632FB1CC99009CAF3B /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				A1CC1D5E2FB1CC99009CAF3B /* Formula1XWidgetExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		A1CC1D242FB1242A009CAF3B /* Formula1X.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Formula1X.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A1CC1D4C2FB1CC97009CAF3B /* Formula1XWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = Formula1XWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		A1CC1D4E2FB1CC97009CAF3B /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		A1CC1D502FB1CC97009CAF3B /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		A1CC1D652FB1D286009CAF3B /* Formula1XWidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Formula1XWidgetExtension.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		A1CC1D5F2FB1CC99009CAF3B /* Exceptions for "Formula1XWidget" folder in "Formula1XWidgetExtension" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = A1CC1D4B2FB1CC97009CAF3B /* Formula1XWidgetExtension */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		A1CC1D262FB1242A009CAF3B /* Formula1X */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = Formula1X;
+			sourceTree = "<group>";
+		};
+		A1CC1D522FB1CC97009CAF3B /* Formula1XWidget */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				A1CC1D5F2FB1CC99009CAF3B /* Exceptions for "Formula1XWidget" folder in "Formula1XWidgetExtension" target */,
+			);
+			path = Formula1XWidget;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -26,13 +78,25 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		A1CC1D492FB1CC97009CAF3B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A1CC1D512FB1CC97009CAF3B /* SwiftUI.framework in Frameworks */,
+				A1CC1D4F2FB1CC97009CAF3B /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
 		A1CC1D1B2FB1242A009CAF3B = {
 			isa = PBXGroup;
 			children = (
+				A1CC1D652FB1D286009CAF3B /* Formula1XWidgetExtension.entitlements */,
 				A1CC1D262FB1242A009CAF3B /* Formula1X */,
+				A1CC1D522FB1CC97009CAF3B /* Formula1XWidget */,
+				A1CC1D4D2FB1CC97009CAF3B /* Frameworks */,
 				A1CC1D252FB1242A009CAF3B /* Products */,
 			);
 			sourceTree = "<group>";
@@ -41,8 +105,18 @@
 			isa = PBXGroup;
 			children = (
 				A1CC1D242FB1242A009CAF3B /* Formula1X.app */,
+				A1CC1D4C2FB1CC97009CAF3B /* Formula1XWidgetExtension.appex */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		A1CC1D4D2FB1CC97009CAF3B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A1CC1D4E2FB1CC97009CAF3B /* WidgetKit.framework */,
+				A1CC1D502FB1CC97009CAF3B /* SwiftUI.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -55,10 +129,12 @@
 				A1CC1D202FB1242A009CAF3B /* Sources */,
 				A1CC1D212FB1242A009CAF3B /* Frameworks */,
 				A1CC1D222FB1242A009CAF3B /* Resources */,
+				A1CC1D632FB1CC99009CAF3B /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				A1CC1D5D2FB1CC99009CAF3B /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
 				A1CC1D262FB1242A009CAF3B /* Formula1X */,
@@ -69,6 +145,28 @@
 			productName = Formula1X;
 			productReference = A1CC1D242FB1242A009CAF3B /* Formula1X.app */;
 			productType = "com.apple.product-type.application";
+		};
+		A1CC1D4B2FB1CC97009CAF3B /* Formula1XWidgetExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A1CC1D602FB1CC99009CAF3B /* Build configuration list for PBXNativeTarget "Formula1XWidgetExtension" */;
+			buildPhases = (
+				A1CC1D482FB1CC97009CAF3B /* Sources */,
+				A1CC1D492FB1CC97009CAF3B /* Frameworks */,
+				A1CC1D4A2FB1CC97009CAF3B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				A1CC1D522FB1CC97009CAF3B /* Formula1XWidget */,
+			);
+			name = Formula1XWidgetExtension;
+			packageProductDependencies = (
+			);
+			productName = Formula1XWidgetExtension;
+			productReference = A1CC1D4C2FB1CC97009CAF3B /* Formula1XWidgetExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -81,6 +179,9 @@
 				LastUpgradeCheck = 2640;
 				TargetAttributes = {
 					A1CC1D232FB1242A009CAF3B = {
+						CreatedOnToolsVersion = 26.4.1;
+					};
+					A1CC1D4B2FB1CC97009CAF3B = {
 						CreatedOnToolsVersion = 26.4.1;
 					};
 				};
@@ -100,12 +201,20 @@
 			projectRoot = "";
 			targets = (
 				A1CC1D232FB1242A009CAF3B /* Formula1X */,
+				A1CC1D4B2FB1CC97009CAF3B /* Formula1XWidgetExtension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
 		A1CC1D222FB1242A009CAF3B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A1CC1D4A2FB1CC97009CAF3B /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -122,7 +231,22 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		A1CC1D482FB1CC97009CAF3B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		A1CC1D5D2FB1CC99009CAF3B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A1CC1D4B2FB1CC97009CAF3B /* Formula1XWidgetExtension */;
+			targetProxy = A1CC1D5C2FB1CC99009CAF3B /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		A1CC1D2D2FB1242C009CAF3B /* Debug */ = {
@@ -251,6 +375,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Formula1X/Formula1X.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 7RWMCRQ389;
@@ -283,6 +408,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Formula1X/Formula1X.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 7RWMCRQ389;
@@ -310,6 +436,68 @@
 			};
 			name = Release;
 		};
+		A1CC1D612FB1CC99009CAF3B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = Formula1XWidgetExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 7RWMCRQ389;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Formula1XWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Formula1XWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = vaidik.Formula1X.Formula1XWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		A1CC1D622FB1CC99009CAF3B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = Formula1XWidgetExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 7RWMCRQ389;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Formula1XWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Formula1XWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = vaidik.Formula1X.Formula1XWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -327,6 +515,15 @@
 			buildConfigurations = (
 				A1CC1D302FB1242C009CAF3B /* Debug */,
 				A1CC1D312FB1242C009CAF3B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A1CC1D602FB1CC99009CAF3B /* Build configuration list for PBXNativeTarget "Formula1XWidgetExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A1CC1D612FB1CC99009CAF3B /* Debug */,
+				A1CC1D622FB1CC99009CAF3B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
