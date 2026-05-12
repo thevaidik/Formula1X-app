@@ -54,6 +54,9 @@ struct HomeView: View {
                             if upcomingRaces.count > 1 {
                                 ScheduleSectionView(races: Array(upcomingRaces.dropFirst()))
                             }
+                            
+                            // Widgets Section
+                            WidgetsSectionView()
                         }
                         .padding(.bottom, 50)
                     }
@@ -184,7 +187,7 @@ struct RankingsSectionView: View {
                 ZStack {
                     Theme.lightGrey
                     HStack {
-                        Text("WORLD RANKINGS")
+                        Text("RANKINGS")
                             .retroFont(size: 40, isTitle: true)
                             .foregroundColor(.black)
                         Spacer()
@@ -201,49 +204,89 @@ struct RankingsSectionView: View {
                 .padding(.horizontal, 20)
                 .padding(.bottom, 20)
             
-            // Top 3 Drivers
-            VStack(spacing: 10) {
-                ForEach(drivers.prefix(3)) { driver in
-                    HStack(spacing: 0) {
-                        // Position Box
-                        ZStack {
-                            Theme.oliveGreen
-                            Text("\(driver.position)")
-                                .retroFont(size: 40, isTitle: true)
+            // Top Driver
+            if let topDriver = drivers.first {
+                HStack(spacing: 0) {
+                    // Position Box
+                    ZStack {
+                        Theme.oliveGreen
+                        Text("1")
+                            .retroFont(size: 40, isTitle: true)
+                            .foregroundColor(.black)
+                    }
+                    .frame(width: 80, height: 80)
+                    .clipShape(UnevenRoundedRectangle(topLeadingRadius: 10, bottomLeadingRadius: 10, bottomTrailingRadius: 0, topTrailingRadius: 0))
+                    
+                    // Details Box
+                    ZStack(alignment: .leading) {
+                        Theme.mustardYellow
+                        HStack {
+                            VStack(alignment: .leading, spacing: 0) {
+                                Text("TOP DRIVER")
+                                    .retroFont(size: 14)
+                                    .foregroundColor(.black)
+                                    .opacity(0.7)
+                                Text(topDriver.driverName)
+                                    .retroFont(size: 30, isTitle: true)
+                                    .foregroundColor(.black)
+                                    .lineLimit(1)
+                                    .minimumScaleFactor(0.5)
+                            }
+                            Spacer()
+                            Text("\(Int(topDriver.points)) PTS")
+                                .retroFont(size: 24, isTitle: true)
                                 .foregroundColor(.black)
                         }
-                        .frame(width: 80, height: 80)
-                        .clipShape(UnevenRoundedRectangle(topLeadingRadius: 10, bottomLeadingRadius: 10, bottomTrailingRadius: 0, topTrailingRadius: 0))
-                        
-                        // Details Box
-                        ZStack(alignment: .leading) {
-                            Theme.mustardYellow
-                            HStack {
-                                VStack(alignment: .leading, spacing: 0) {
-                                    Text("Driver #\(driver.driverNumber)")
-                                        .retroFont(size: 14)
-                                        .foregroundColor(.black)
-                                        .opacity(0.7)
-                                    Text(driver.driverName)
-                                        .retroFont(size: 30, isTitle: true)
-                                        .foregroundColor(.black)
-                                        .lineLimit(1)
-                                        .minimumScaleFactor(0.5)
-                                }
-                                Spacer()
-                                Text("\(Int(driver.points)) PTS")
-                                    .retroFont(size: 24, isTitle: true)
-                                    .foregroundColor(.black)
-                            }
-                            .padding(.horizontal, 20)
-                        }
-                        .frame(height: 80)
-                        .clipShape(UnevenRoundedRectangle(topLeadingRadius: 0, bottomLeadingRadius: 0, bottomTrailingRadius: 10, topTrailingRadius: 10))
+                        .padding(.horizontal, 20)
                     }
-                    .padding(.horizontal, 20)
+                    .frame(height: 80)
+                    .clipShape(UnevenRoundedRectangle(topLeadingRadius: 0, bottomLeadingRadius: 0, bottomTrailingRadius: 10, topTrailingRadius: 10))
                 }
+                .padding(.horizontal, 20)
+                .padding(.bottom, 10)
             }
-            .padding(.bottom, 40)
+            
+            // Top Constructor
+            if let topConstructor = constructors.first {
+                HStack(spacing: 0) {
+                    // Position Box
+                    ZStack {
+                        Theme.salmonPink
+                        Text("1")
+                            .retroFont(size: 40, isTitle: true)
+                            .foregroundColor(.black)
+                    }
+                    .frame(width: 80, height: 80)
+                    .clipShape(UnevenRoundedRectangle(topLeadingRadius: 10, bottomLeadingRadius: 10, bottomTrailingRadius: 0, topTrailingRadius: 0))
+                    
+                    // Details Box
+                    ZStack(alignment: .leading) {
+                        Theme.lightGrey
+                        HStack {
+                            VStack(alignment: .leading, spacing: 0) {
+                                Text("TOP CONSTRUCTOR")
+                                    .retroFont(size: 14)
+                                    .foregroundColor(.black)
+                                    .opacity(0.7)
+                                Text(topConstructor.teamName)
+                                    .retroFont(size: 30, isTitle: true)
+                                    .foregroundColor(.black)
+                                    .lineLimit(1)
+                                    .minimumScaleFactor(0.5)
+                            }
+                            Spacer()
+                            Text("\(Int(topConstructor.points)) PTS")
+                                .retroFont(size: 24, isTitle: true)
+                                .foregroundColor(.black)
+                        }
+                        .padding(.horizontal, 20)
+                    }
+                    .frame(height: 80)
+                    .clipShape(UnevenRoundedRectangle(topLeadingRadius: 0, bottomLeadingRadius: 0, bottomTrailingRadius: 10, topTrailingRadius: 10))
+                }
+                .padding(.horizontal, 20)
+                .padding(.bottom, 40)
+            }
         }
         }
         .buttonStyle(PlainButtonStyle())
@@ -301,6 +344,46 @@ struct ScheduleSectionView: View {
                 }
                 .padding(.horizontal, 20)
             }
+            .padding(.bottom, 40)
+        }
+    }
+}
+
+struct WidgetsSectionView: View {
+    var body: some View {
+        VStack(spacing: 0) {
+            ZStack {
+                Theme.oliveGreen
+                HStack {
+                    Text("WIDGETS")
+                        .retroFont(size: 40, isTitle: true)
+                        .foregroundColor(.black)
+                    Spacer()
+                }
+                .padding(.horizontal, 20)
+            }
+            .frame(height: 80)
+            .clipShape(RoundedRectangle(cornerRadius: 15))
+            .padding(.horizontal, 20)
+            .padding(.bottom, 20)
+            
+            ZStack(alignment: .leading) {
+                Theme.lightGrey
+                VStack(alignment: .leading, spacing: 10) {
+                    Text("NEXT RACE WIDGET")
+                        .retroFont(size: 24, isTitle: true)
+                        .foregroundColor(.black)
+                    
+                    Text("Bring the 1980s retro aesthetic directly to your Home Screen. Long press your Home Screen, tap the + icon in the top left, and search for 'Formula1X' to add.")
+                        .font(.system(size: 14, weight: .medium))
+                        .foregroundColor(.black.opacity(0.7))
+                        .lineSpacing(4)
+                }
+                .padding(20)
+            }
+            .clipShape(RoundedRectangle(cornerRadius: 15))
+            .padding(.horizontal, 20)
+            .padding(.bottom, 40)
         }
     }
 }
